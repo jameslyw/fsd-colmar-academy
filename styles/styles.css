@@ -90,7 +90,7 @@ header {
 }
 
 header > img {
-  max-width: 100%;/*  */
+  max-width: 100%; /*  */
   height: auto;
 }
 
@@ -99,7 +99,7 @@ header > div {
   flex-direction: column;
   justify-content: space-evenly;
   height: 18rem;
-  padding: 0 1.5rem;
+  padding: 0 1.5rem; /* Top, left */
 }
 
 header > div > h1 {
@@ -111,93 +111,93 @@ header > div > h2 {
 }
 
 header > div > a {
-    background-color: #484848;
-    display: block;
-    width: 100%;
-    padding: 0.5rem 0; /* top=8px, left=0px */
-    text-align: center;
-    color: #ffff;    
+  background-color: #484848;
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0; /* top=8px, left=0px */
+  text-align: center;
+  color: #ffff;
 }
 
 /* hover effect for call to action link */
 
-header > div > a:hover{
-    color: rgb(255, 255,255,0.5);
-    background-color: rgb(72, 72, 72, 0.5);
+header > div > a:hover {
+  color: rgb(255, 255, 255, 0.5);
+  background-color: rgb(72, 72, 72, 0.5);
 }
 
 /* Set up practice section */
-.practice{
-    display: flex;
-    justify-content: flex-start; /* push content to the left */
-    flex-direction: column;
+.practice {
+  display: flex;
+  justify-content: flex-start; /* push content to the left */
+  flex-direction: column;
 }
-.practice > .imagecontainer > img{
+.practice > .imagecontainer > img {
   max-width: 100%;
   height: auto;
 }
-.practice > .practice-text{
-    padding: 0 1.5rem;
+.practice > .practice-text {
+  padding: 0 1.5rem;
 }
-.practice > .practice-text > h1{
+.practice > .practice-text > h1 {
   font-size: x-large;
   margin: 2rem 0 1.5rem 0;
 }
-.practice > .practice-text > p{
+.practice > .practice-text > p {
   font-size: small;
   font-weight: lighter;
 }
-.practice > .practice-text > p > span{
+.practice > .practice-text > p > span {
   display: block;
   padding: 2rem 0;
 }
 
 /* set up event section */
-.events{
+.events {
   display: grid;
   grid-template-rows: repeat(3, min-content);
   border-left: 1px solid#e7e7e7;
 }
-.events .event-block{
+.events .event-block {
   display: grid;
   grid-template-columns: 0.35fr 0.65fr;
   border-top: 1px solid #e7e7e7;
   border-bottom: 1px solid #e7e7e7;
   align-items: center;
 }
-.events .event-block:last-child{
+.events .event-block:last-child {
   background-color: #d8d8d8;
 }
 
-.events > .event-block > img{
+.events > .event-block > img {
   max-width: 100%;
   height: auto;
   margin: 1rem;
 }
-.events > .event-block:first-child  > img{
-    margin-top: 2rem;
+.events > .event-block:first-child > img {
+  margin-top: 2rem;
 }
-.events > .event-block > div > h3{
+.events > .event-block > div > h3 {
   font-size: medium;
 }
-.events > .event-block > .event-text > h3{
-    font-size: medium;
+.events > .event-block > .event-text > h3 {
+  font-size: medium;
 }
- .events > .event-block > .event-text{
-   margin: 2rem;
+.events > .event-block > .event-text {
+  margin: 2rem;
 }
 .events > .event-block > div > p,
-.events > .event-block > .event-text > a{
+.events > .event-block > .event-text > a {
   font-size: small;
 }
-.events > .event-block > .event-text > a{
+.events > .event-block > .event-text > a {
   color: #3434c6;
 }
-.events > .event-block > .event-text > p{
+.events > .event-block > .event-text > p {
   margin: 0.5rem 0;
 }
 /* start of footer section */
-footer{
+footer {
   grid-column: full-start / full-end;
   display: flex;
   flex-direction: row;
@@ -207,21 +207,25 @@ footer{
   justify-content: space-between;
   padding: 1rem 0 2rem 0;
   color: #8d8d8d;
-
 }
 
-footer > p{
+footer > p {
   margin-left: 1.5rem;
 }
-footer > ul{
+footer > ul {
   display: flex;
   list-style: none;
 }
-footer > ul > li{
+footer > ul > li {
   margin-right: 1rem;
 }
-footer > ul > li:last-child{
+footer > ul > li:last-child {
   margin-right: 1.5rem;
+}
+
+/* Hide nav-mobile in desktop view */
+#nav-mobile, .events > .event-block > .event-img-mobile{
+  display: none;
 }
 /* Hide events mobile */
 
@@ -235,7 +239,73 @@ footer > ul > li:last-child{
 
 /* if the width of screen is 640px and below (aka 40rem x 16px) */
 @media screen and (max-width: 40rem) {
+  nav, .practice {
+    display: none;
+  }
+  #nav-mobile {
+    display: flex;
+    height: 4rem;
+    align-items: center;
+    grid-column: full-start / full-end;
+    justify-content: space-around;
+  }
+  header {
+    display: grid;
+    grid-column: full-start / full-end;
+  }
+  .imagecontainer {
+    padding: 0;
+  }
+  header > div {
+    display: block;
+    width: auto;
+    height: auto;
+    padding: 2rem 1rem;
+  }
+  header > div > h1 {
+    font-size: 3rem; /* xx-large is 32px */
+    padding: 2rem 0 2rem 1rem;
+  }
+  header > div > h2 {
+    font-size: x-large; /* xx-large is 32px */
+    font-weight: normal;
+    padding-bottom: 1.5rem;
+  }
+  header > div > a {
+    opacity: 0.5;
+  }
+  .events {
+    display: grid;
+    grid-column: full-start / full-end;
+  }
+  .events > .event-block {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1rem 2rem 1rem;
+  }
+  .events > .event-block:first-child > img {
+    margin-top: 0;
+  }
+  .events > .event-block > .event-text {
+    
+    width: 100;
+    height: auto;
+    padding-left: 1rem;
+  }
+  .events > .event-block > .event-text > h3{
+    font-size: xx-large;
+  }
+  .events > .event-block > .event-text > p,
+  .events > .event-block > .event-text > a{
+    font-size:large;
+    font-weight: lighter;
+  }
+  .events > .event-block > img {
+    display: none;
+  }
+  .events > .event-block > .event-img-mobile {
+    display: block;
+  }
 }
-
 /* *********************** */
 /** End of Mobile Section **/
