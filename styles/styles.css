@@ -224,7 +224,7 @@ footer > ul > li:last-child {
 }
 
 /* Hide nav-mobile in desktop view */
-#nav-mobile, .events > .event-block > .event-img-mobile{
+#nav-mobile, .events > .event-block > .events-img-mobile{
   display: none;
 }
 /* Hide events mobile */
@@ -303,9 +303,24 @@ footer > ul > li:last-child {
   .events > .event-block > img {
     display: none;
   }
-  .events > .event-block > .event-img-mobile {
+  .events > .event-block > .events-img-mobile {
     display: block;
   }
+  /* Hide footer in mobile */
+footer > ul{
+  display: none;
+  }
+
+  .events{
+    border-left: none;
+  }
+  /* remove bckground color for event: "special guest lecturer" */
+  .events > .event-block:last-child{
+    background-color:#ffff;
+    border-bottom: 1px solid #e7e7e7;
+  }
 }
+
 /* *********************** */
 /** End of Mobile Section **/
+
