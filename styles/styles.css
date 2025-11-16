@@ -8,7 +8,7 @@
 }
 html {
   font-size: 16px;
-  box-sizing: border-box;
+  box-sizing: content-box;
 }
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -22,6 +22,7 @@ a {
   display: grid;
   grid-template-columns: [full-start] 0.6fr [center-end center-start] 0.4fr [full-end]; /* start to center to end */
   grid-template-rows: repeat(6, min-content);
+  max-width: 100%;
 }
 
 /* TODO */
@@ -196,6 +197,62 @@ header > div > a:hover {
 .events > .event-block > .event-text > p {
   margin: 0.5rem 0;
 }
+/* start of Learning Section */
+
+.learning{
+    display: block;
+    flex-direction: row;
+    gap: 0;
+    padding: 0;
+    margin-left: 0;
+    grid-column: full-start / full-end;
+    background-color: #EAEBEC; 
+    
+  }
+
+  .learning > .learning-grid {
+    display: grid;
+    flex-direction: row;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: 2rem 4.5rem 2rem 4.5rem ;  /* 32px, 72px, 32px, 24px */
+    column-gap: 2rem; /* 32px */
+    row-gap: 2rem; /* 32px */
+    background-color: #EAEBEC;
+    grid-column: full-start / full-end;
+    
+}
+.learning > h1 {
+  padding-top: 2rem; /* create top padding with 32px */
+  font-size: xx-large;
+  text-align: center;
+  }
+.learning-card > :last-child {
+  padding: 16px 8px 16px 16px; /* top, right, btm, left */
+  background-color: #ffffff;  
+}
+.learning-details > h3 {
+  margin-bottom: 8px;
+  margin-left: 16px;
+}
+.learning-details > h4 {
+  margin-bottom: 8px;
+  margin-left: 16px;
+}
+.learning-details > p{
+  margin-bottom: 24px;
+  margin-left: 16px;
+}
+.learning-grid > .grid> p{
+  
+}
+.learning-image{
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+
 /* start of footer section */
 footer {
   grid-column: full-start / full-end;
