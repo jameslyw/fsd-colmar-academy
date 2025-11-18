@@ -493,22 +493,30 @@ footer > ul > li:last-child {
   display: none;
 }
 /* Thesis */
-.thesis > #title:after {
-  content: "Thesis Exhibits";
-  font-size: xx-large;
-  padding-top: 2rem;
-  padding-bottom: 1rem;
-}
+/* Thesis */
+    .thesis {
+        display: block;
+        grid-template-columns: 1fr;
+        padding: 0;
+        /* border: 1px solid red; */
+    }
 
-.videocontainer > video{
-   /*  */
-    width: 40rem;
-    height: auto;
-    padding-bottom: 24px;
-    
-  
-    
-}
+    .thesis>#title:after {
+        content: "Thesis Exhibits";
+        font-size: xx-large;
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+    }
+
+    .thesis .videocontainer,
+    .thesis .videocontainer video {
+        width: 100%;
+        display: block;
+        /* border: 1px solid blue; */
+    }
+    /* End of Thesis - mobile view */
+} 
+
 
 
 
@@ -525,7 +533,7 @@ footer > ul{
     background-color:#ffff;
     border-bottom: 1px solid #e7e7e7;
   }
-}
+
 
 /* *********************** */
 /** End of Mobile Section **/
